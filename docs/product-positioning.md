@@ -1,65 +1,64 @@
 # Product Positioning
 
-## Core Thesis
+## Core Position
 
-Solana is one of the few ecosystems where real-time, high-frequency on-chain activity is not theoretical. Speed, low friction, and strong user experience make it a natural home for next-generation applications, capital formation, and automated decision systems.
+`causal_funding` is a Solana-native decision intelligence system for high-stakes crypto workflows.
 
-That same advantage creates a harder risk problem. Good opportunities and bad actors can both move fast. Manual diligence, fragmented wallet analysis, and static heuristics do not match the speed of the environment.
+We are not positioning this as a generic alert feed. We are positioning it as a decision layer for operators who need to answer:
 
-`causal_funding` exists to close that gap.
+- Who likely controls this token operation?
+- Can this setup execute harmful behavior quickly?
+- Is this pattern consistent with repeat-operator risk?
+- Should we ALLOW, REVIEW, or BLOCK right now?
 
-## What We Are Building
+## Why Solana Is the Right Battlefield
 
-`causal_funding` is a Solana-native causal attribution and risk intelligence platform. It is built to help operators understand not only whether something is risky, but why it appears risky, where the signal originates, and how quickly action should be taken.
+Solana combines speed, user demand, and capital efficiency in a way that changes both opportunity and risk timelines.
 
-The system is designed around a closed loop:
+If due diligence is slower than execution, teams make bad decisions even with good intentions. Our product thesis is straightforward: risk intelligence must be as fast, structured, and explainable as the chain it protects.
 
-1. monitor suspicious token activity
-2. trace funding-path causality
-3. score risk across multiple dimensions
-4. organize evidence into reviewable outputs
-5. synthesize operator-facing judgement through an agent layer
+## Product Thesis
 
-This is a decision system, not a single-purpose alerting script.
+Most market tools stop at one of these layers:
 
-## What Makes It Different
+- weak heuristics
+- static dashboards
+- opaque black-box scores
 
-Most token-risk tooling stops at heuristics, dashboards, or black-box scores.
+`causal_funding` is designed as a closed operating loop:
 
-Our product direction is different in three ways:
+1. Build causal attribution from seed wallets to upstream control surfaces
+2. Compute multi-dimensional risk with cross-signal interaction logic
+3. Package evidence into operator-readable outputs
+4. Produce action-level decisions (ALLOW / REVIEW / BLOCK)
+5. Govern policy under drift and trigger recalibration when regime shifts appear
 
-- Causal attribution instead of surface-level screening
-- Multi-dimensional rating instead of one-dimensional scoring
-- Evidence-backed agent judgement instead of raw alerts
+## Institutional Relevance
 
-The agent layer is especially important. It turns technical outputs into readable operational conclusions by structuring evidence from macro to micro and supporting a more explicit reasoning chain around risk, confidence, and next action.
+Institutions do not buy "alerts" alone. They buy confidence, explainability, and governance.
 
-## Who It Is For
+Our direction is to provide:
 
-The primary user groups are:
+- Decision outputs, not only scores
+- Evidence chain suitable for internal review workflows
+- Threshold calibration grounded in replayed labeled outcomes
+- Drift-aware policy control to reduce model staleness risk
 
-- exchange listing and risk teams
-- crypto funds and research teams
-- market makers
-- launchpads
-- security and monitoring teams
+## Why This Is Hard To Replicate Quickly
 
-These users do not just need warnings. They need fast, explainable judgement that can stand up to internal review and support real operating decisions before listing, investing, or trading.
+The defensibility is in the compounding loop, not in one algorithm headline.
 
-## Why This Is Hard To Replicate
+- Causal evidence chain + policy calibration + drift governance are interdependent
+- Report quality improves with repeated operational feedback
+- Decision consistency improves as replay and governance artifacts accumulate
 
-We do not treat the product as a one-off detector. The long-term value comes from the closed loop itself.
+This creates operational compounding that simple score-only tools cannot match quickly.
 
-Every run creates structured outputs, process feedback, and future training signals. Over time, that supports both model improvement and workflow improvement. The defensibility is not only in signal design, but in the compounding combination of data, scoring logic, agent output quality, and operator-facing product integration.
+## Exposure Strategy
 
-This is why we are building with controlled exposure and phased access rather than broad public release from day one.
+We are intentionally controlled in exposure.
 
-## Current Market Posture
+Public demo shows capability and decision value.
+Core internals remain private until broader production hardening is complete.
 
-For Eternal, we are presenting a production-minded, operator-oriented product with a realistic delivery path:
-
-- current focus: result quality, evidence clarity, workflow usability
-- restricted access: judges and selected pilot partners
-- next production step: controlled integrations and batch analysis readiness
-
-The product is being positioned for institutional use, but we are staying honest about current scope. We are not claiming full enterprise rollout today. We are demonstrating a credible path from working system to institutional deployment.
+That balance is intentional: clear product proof without leaking the full execution moat.

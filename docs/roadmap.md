@@ -1,56 +1,55 @@
 # Roadmap
 
-## Eternal Sprint Plan
+## Eternal Build Focus
 
-The product is already in active development. The current focus is not to invent a concept from zero, but to refine a working system into a stronger Eternal submission and a more credible institutional pilot candidate.
+The current phase is execution quality, decision quality, and governance quality.
 
-## Week 1
+We are already beyond concept stage. The roadmap is about hardening a working system into a stronger institutional candidate.
 
-- finalize product narrative and operator-facing positioning
-- define the demo boundary tightly
-- prepare the repository, documentation, and Week 1 update
+## Near-Term Priorities
 
-## Week 2
+### 1) Decision Governance Hardening
 
-- strengthen first-pass result quality
-- reduce latency and improve stability in the closed loop
-- improve readability of the structured output
+- Continue threshold calibration on expanded labeled replay sets
+- Improve policy robustness across market regimes
+- Tighten decision consistency between risk engine and policy output
 
-## Week 3
+### 2) Drift Closed-Loop Expansion
 
-- refine evidence presentation and review flow
-- improve agent-supported judgement quality
-- prepare judge-facing product materials and submission assets
+- Improve drift signal fidelity and alert granularity
+- Add automated recalibration workflows for persistent regime changes
+- Expand auditability of policy shifts and decision deltas
 
-## Week 4
+### 3) Evidence Productization
 
-- finish demo hardening
-- complete final submission materials
-- remove low-signal features and focus only on stable, reviewable outcomes
+- Improve judge/operator readability of evidence bundles
+- Strengthen concise executive summaries for fast triage
+- Enhance premium report structure for institutional workflows
 
-## Near-Term Product Priorities
+### 4) Controlled Integration Readiness
 
-The next production-minded milestones after the Eternal sprint are:
+- Maintain restricted API evaluation mode
+- Prepare higher-concurrency batch workflows for pilot users
+- Expand integration materials for exchanges/funds/security teams
 
-- continued speed optimization
-- stronger evidence-grade reporting
-- clearer audit-style output for reviews
-- restricted API access for judges and selected pilot partners
-- preparation for high-concurrency batch analysis in the formal product version
+## Access and Release Strategy
 
-## Product Release Philosophy
+We are not prioritizing broad public API rollout first.
 
-We are intentionally not prioritizing broad public API rollout yet.
+Priority order:
 
-The immediate goal is controlled evaluation, product reliability, and strong evidence quality. Once that layer is stable, the next stage is restricted integration with serious counterparties, followed by broader production access.
+1. decision reliability
+2. evidence reliability
+3. governance reliability
+4. controlled pilot integrations
+5. broader release
 
 ## Long-Term Direction
 
-The product direction is toward a deployable risk intelligence layer for Solana operators. The long-term system will be shaped around:
+`causal_funding` is being developed as infrastructure-grade risk intelligence for Solana operators.
 
-- institutional decision support
-- controlled workflow integrations
-- faster batch processing
-- compounding data and feedback loops for future training and model refinement
+Long-term target:
 
-The core principle is straightforward: build something that can survive real operating conditions before optimizing for wide distribution.
+- trusted decision layer for listing, investing, and pre-trade controls
+- evidence and governance standards that survive real institutional scrutiny
+- compounding quality through closed-loop feedback and controlled deployment

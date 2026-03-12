@@ -1,37 +1,84 @@
 # causal_funding Eternal
 
-`causal_funding` is a Solana-native causal attribution and risk intelligence system built for high-speed decision environments.
+`causal_funding` is a Solana-native, decision-grade risk intelligence system for listing review, investment screening, and pre-trade gating.
 
-It is not a basic rug checker. The product is designed to move from suspicious-signal detection to funding-path attribution, multi-dimensional risk scoring, evidence organization, and agent-supported judgement in a single closed loop. The current system is optimized to produce a first-pass structured result in roughly 1-2 minutes per token while we continue improving speed, stability, and operator usability.
+This is not a toy rug checker. The system is built as a closed loop:
+
+1. Causal funding attribution
+2. Multi-dimensional risk scoring
+3. Evidence-grade forensic packaging
+4. Operator-facing judgment synthesis
+5. Calibrated ALLOW / REVIEW / BLOCK policy
+6. Drift-aware policy governance
 
 ## Why Solana
 
-Solana makes real-time, high-throughput on-chain applications practical at scale. That same execution speed creates a new requirement for risk intelligence: if opportunity and risk both compress into short windows, diligence has to become faster, more structured, and more explainable.
+Solana is one of the best execution environments for real-time products: fast finality, low friction, and high throughput.
 
-`causal_funding` is being built around that reality. The goal is to give operators a system that can support listing review, investment screening, and pre-trade judgement on a chain where waiting too long often means acting too late.
+That advantage also compresses risk windows. Capital can move fast, narratives can move faster, and manual diligence often arrives too late. `causal_funding` is built for this exact operating reality: make explainable risk decisions at Solana speed.
 
-## What the Product Does
+## What This Demo Proves
 
-- Traces suspicious token funding paths from project-linked wallets to upstream sources.
-- Combines multiple signals into a structured, multi-dimensional risk view.
-- Organizes evidence into reviewable outputs instead of a single black-box score.
-- Uses an agent layer to turn evidence into readable, decision-oriented conclusions.
-- Generates closed-loop output that can later support model training and system improvement.
+The Eternal demo is designed to prove production-minded decision quality, not just dashboard output:
 
-## Current Product Position
+- Input: token mint (pool can be auto-detected)
+- Output: structured risk report + evidence package
+- Decision layer: ALLOW / REVIEW / BLOCK
+- Governance layer: drift-aware threshold control and recalibration signal
 
-The current Eternal build is aimed at:
+## Current Capability Highlights
 
-- exchange listing and risk teams
-- crypto funds and research teams
-- market makers and launchpads
-- security and monitoring teams
+- Causal path tracing from project-linked seeds to upstream sources
+- Multi-dimensional risk engine with cross-signal penalties
+- Forensic recovery of execution-root operators and creation anchors
+- Agent-ready judgment artifacts for operator review
+- Calibrated decision policy from historical replay data
+- Drift closure loop with automatic threshold tightening under unstable regimes
 
-This repository is intentionally product-facing. It documents the external positioning, demo scope, and execution roadmap without exposing sensitive internal implementation details or the full production architecture.
+## Internal Calibration Snapshot (Current)
 
-## Access Model
+From the current internal provisional labeled set:
 
-The API is currently in restricted evaluation mode for judges and selected pilot partners only. Public API access is not the immediate priority. The near-term focus is product quality, evidence clarity, and controlled evaluation before broader rollout.
+- Rug catch rate (BLOCK + REVIEW): `0.8857`
+- Safe block rate: `0.05`
+- Block precision: `0.9688`
+
+This is exactly the direction we want for institutional workflows: high catch quality with controlled false blocks.
+
+## What Is Open vs Private
+
+This repository is intentionally product-facing.
+
+Open in demo:
+
+- Product positioning
+- Demo scope
+- Roadmap and integration direction
+- Public-facing operating narrative
+
+Private by design:
+
+- Full production architecture
+- Internal weighting details and threshold internals
+- Private data connectors and enrichment logic
+- Full model-training pipeline and proprietary evidence transformations
+
+## Who This Is Built For
+
+- Exchange listing and risk teams
+- Crypto funds and due-diligence teams
+- Market makers and launch platforms
+- Security and monitoring operators
+
+## Partnering
+
+We are actively open to:
+
+- Strategic capital partners
+- Pilot integration partners (exchange/fund/workflow teams)
+- Data partners for enrichment and coverage expansion
+
+Current access is controlled for judges and selected pilot counterparts.
 
 ## Repository Guide
 
@@ -39,15 +86,6 @@ The API is currently in restricted evaluation mode for judges and selected pilot
 - `docs/demo-scope.md`
 - `docs/roadmap.md`
 
-## Product Direction
-
-The production path is clear:
-
-- improve latency and result consistency
-- strengthen evidence-grade reporting
-- refine the agent output layer for operator decisions
-- prepare controlled API and high-concurrency batch analysis for institutional pilots
-
 ## Status
 
-This repository was prepared for Colosseum Eternal on March 12, 2026.
+Prepared and actively iterated for Colosseum Eternal (March 2026).
