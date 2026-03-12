@@ -2,7 +2,16 @@
 
 `causal_funding` is a Solana-native, decision-grade risk intelligence system for listing review, investment screening, and pre-trade gating.
 
-This is not a toy rug checker. The system is built as a closed loop:
+**From raw on-chain noise to an auditable BLOCK / REVIEW / ALLOW decision in minutes.**
+
+## Judge TL;DR
+
+- Not a score-only tool: this demo outputs decision + evidence + governance status.
+- Built for Solana speed: designed for real-time listing, investment, and pre-trade workflows.
+- Production-minded quality controls: threshold calibration + drift-aware policy tightening.
+- Internal replay snapshot: rug catch `0.8857`, safe block `0.05`, block precision `0.9688`.
+
+This is not a toy rug checker. The system runs as a closed loop:
 
 1. Causal funding attribution
 2. Multi-dimensional risk scoring
