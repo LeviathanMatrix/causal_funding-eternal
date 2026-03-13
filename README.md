@@ -35,6 +35,46 @@ The Eternal demo is designed to prove production-minded decision quality, not ju
 - Decision layer: ALLOW / REVIEW / BLOCK
 - Governance layer: drift-aware threshold control and recalibration signal
 
+## Public Demo vs Production Engine
+
+This repository is the **public demo layer**.
+
+- Public demo repo: product narrative, demo behavior, sample artifacts, and weekly progress.
+- Private production engine: proprietary internals, private data connectors, internal threshold logic, and full training/ops pipeline.
+
+The demo is powered by the production engine, but core internals are intentionally not open-sourced.
+
+## Judge Access
+
+- Public demo flow: available through this repository and shared demo materials.
+- Judge / pilot access: provided in controlled mode upon request.
+- Contact for access:
+  - Email: `TODO@your-domain.com`
+  - Telegram: `@TODO_HANDLE`
+
+See [docs/judge-access.md](docs/judge-access.md) for the exact request format.
+
+## Quick Demo Run (Operator View)
+
+Use one mint, run attribution, and get a decision output:
+
+```bash
+python3 -m onchain_monitor.causal_funding \
+  --mint <TOKEN_MINT> \
+  --enable-advanced-signals \
+  --enable-decision-policy \
+  --decision-policy-path data/calibration/causal_decision_policy_v2.json \
+  --enable-drift-closure \
+  --output data/causal_reports/<TOKEN_MINT>_demo.json
+```
+
+Expected visible output:
+
+- Risk score + confidence
+- ALLOW / REVIEW / BLOCK action
+- Evidence summary and forensic highlights
+- Drift governance status
+
 ## Current Capability Highlights
 
 - Causal path tracing from project-linked seeds to upstream sources
@@ -94,6 +134,12 @@ Current access is controlled for judges and selected pilot counterparts.
 - `docs/product-positioning.md`
 - `docs/demo-scope.md`
 - `docs/roadmap.md`
+- `docs/judge-access.md`
+- `docs/demo-runbook.md`
+- `docs/submission-checklist.md`
+- `docs/weekly-update-template.md`
+- `docs/video-script-weekly.md`
+- `examples/sample_report_redacted.json`
 
 ## Status
 

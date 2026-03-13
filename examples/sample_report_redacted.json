@@ -1,0 +1,29 @@
+{
+  "mint": "REDACTED_MINT",
+  "pool": "REDACTED_POOL",
+  "risk": {
+    "score": 83.22,
+    "confidence": 0.75,
+    "confidence_label": "high"
+  },
+  "decision_policy": {
+    "action": "BLOCK",
+    "reason": "score_above_block_and_confident",
+    "thresholds": {
+      "block_threshold": 78.34,
+      "review_threshold": 75.0,
+      "min_confidence_for_block": 0.416
+    }
+  },
+  "judgement": {
+    "verdict_level": "high",
+    "risk_conclusion": "high_risk: recurring operator pattern with credible execution surface"
+  },
+  "highlights": [
+    "Multi-dimensional risk with cross-signal penalties",
+    "Evidence-backed operator-facing decision output",
+    "Drift-aware policy governance status included"
+  ],
+  "note": "This is a redacted demo artifact. Production internals are private."
+}
+
