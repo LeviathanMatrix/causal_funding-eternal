@@ -8,6 +8,7 @@
 
 - Not a score-only tool: this demo outputs decision + evidence + governance status.
 - Built for Solana speed: designed for real-time listing, investment, and pre-trade workflows.
+- Agent-driven reasoning layer: converts technical evidence into operator-facing judgment.
 - Production-minded quality controls: threshold calibration + drift-aware policy tightening.
 - Internal replay snapshot: rug catch `0.8857`, safe block `0.05`, block precision `0.9688`.
 
@@ -16,7 +17,7 @@ This is not a toy rug checker. The system runs as a closed loop:
 1. Causal funding attribution
 2. Multi-dimensional risk scoring
 3. Evidence-grade forensic packaging
-4. Operator-facing judgment synthesis
+4. Agent-driven, operator-facing judgment synthesis
 5. Calibrated ALLOW / REVIEW / BLOCK policy
 6. Drift-aware policy governance
 
@@ -80,7 +81,7 @@ Expected visible output:
 - Causal path tracing from project-linked seeds to upstream sources
 - Multi-dimensional risk engine with cross-signal penalties
 - Forensic recovery of execution-root operators and creation anchors
-- Agent-ready judgment artifacts for operator review
+- Agent-driven reasoning artifacts for operator review (technical evidence -> decision narrative)
 - Calibrated decision policy from historical replay data
 - Drift closure loop with automatic threshold tightening under unstable regimes
 

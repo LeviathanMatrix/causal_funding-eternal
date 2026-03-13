@@ -28,6 +28,7 @@ Current first-pass runtime target remains approximately `1-2 minutes` per token 
 
 - This is not a basic rug checker.
 - The system outputs decisions, evidence, and governance signals.
+- Agent-driven interpretation turns raw on-chain evidence into operator-readable conclusions.
 - The product is designed for listing, investment, and pre-trade workflows.
 - There is a credible path to restricted institutional deployment.
 

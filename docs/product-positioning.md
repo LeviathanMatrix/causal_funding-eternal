@@ -33,6 +33,12 @@ Most market tools stop at one of these layers:
 4. Produce action-level decisions (ALLOW / REVIEW / BLOCK)
 5. Govern policy under drift and trigger recalibration when regime shifts appear
 
+## Agent Intelligence Layer
+
+A major differentiator is the agent-driven interpretation layer.
+
+The system does not leave teams with raw traces and numeric outputs only. It composes evidence into operator-ready judgment, with clear rationale and confidence context. This makes outputs usable in real review workflows where speed and explainability both matter.
+
 ## Institutional Relevance
 
 Institutions do not buy "alerts" alone. They buy confidence, explainability, and governance.
@@ -41,6 +47,7 @@ Our direction is to provide:
 
 - Decision outputs, not only scores
 - Evidence chain suitable for internal review workflows
+- Agent-driven decision narrative from technical evidence
 - Threshold calibration grounded in replayed labeled outcomes
 - Drift-aware policy control to reduce model staleness risk
 
