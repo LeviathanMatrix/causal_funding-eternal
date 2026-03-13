@@ -19,8 +19,8 @@ Please include:
 
 Contact:
 
-- Email: `TODO@your-domain.com`
-- Telegram: `@TODO_HANDLE`
+- Email: `gauss8008@gmail.com`
+- Telegram: `@Leviathan_Gauss`
 
 ## What Is Included In Judge Mode
 
