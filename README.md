@@ -41,9 +41,28 @@ The Eternal demo is designed to prove production-minded decision quality, not ju
 This repository is the **public demo layer**.
 
 - Public demo repo: product narrative, demo behavior, sample artifacts, and weekly progress.
+- Demo shell code: `demo_shell/` (UI + API forwarding only, no core algorithm internals).
 - Private production engine: proprietary internals, private data connectors, internal threshold logic, and full training/ops pipeline.
 
 The demo is powered by the production engine, but core internals are intentionally not open-sourced.
+
+## Demo Shell (Open Source Layer)
+
+`demo_shell` is the upload-ready public layer for Eternal.
+
+- Input collection and mode switching (public/judge)
+- API forwarding to private backend
+- Decision + evidence rendering
+- Fallback sample for presentation safety
+
+Quick run:
+
+```bash
+cd demo_shell
+cp .env.example .env
+pip install -r requirements.txt
+python app.py
+```
 
 ## Judge Access
 
@@ -140,7 +159,9 @@ Current access is controlled for judges and selected pilot counterparts.
 - `docs/submission-checklist.md`
 - `docs/weekly-update-template.md`
 - `docs/video-script-weekly.md`
+- `docs/demo-shell-architecture.md`
 - `examples/sample_report_redacted.json`
+- `demo_shell/`
 
 ## Status
 
