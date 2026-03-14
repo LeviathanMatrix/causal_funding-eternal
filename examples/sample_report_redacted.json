@@ -9,11 +9,7 @@
   "decision_policy": {
     "action": "BLOCK",
     "reason": "score_above_block_and_confident",
-    "thresholds": {
-      "block_threshold": 78.34,
-      "review_threshold": 75.0,
-      "min_confidence_for_block": 0.416
-    }
+    "thresholds": "REDACTED_PRIVATE_POLICY"
   },
   "judgement": {
     "verdict_level": "high",
@@ -26,4 +22,3 @@
   ],
   "note": "This is a redacted demo artifact. Production internals are private."
 }
-

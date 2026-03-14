@@ -10,7 +10,7 @@
 - Built for Solana speed: designed for real-time listing, investment, and pre-trade workflows.
 - Agent-driven reasoning layer: converts technical evidence into operator-facing judgment.
 - Production-minded quality controls: threshold calibration + drift-aware policy tightening.
-- Internal replay snapshot: rug catch `0.8857`, safe block `0.05`, block precision `0.9688`.
+- Internal replay quality band: rug catch `~89%`, safe block `~5%`, block precision `~97%`.
 
 This is not a toy rug checker. The system runs as a closed loop:
 
@@ -69,24 +69,36 @@ python app.py
 - Public demo flow: available through this repository and shared demo materials.
 - Judge / pilot access: provided in controlled mode upon request.
 - Contact for access:
-  - Email: `TODO@your-domain.com`
-  - Telegram: `@TODO_HANDLE`
+  - Email: `gauss8008@gmail.com`
+  - Telegram: `@Leviathan_Gauss`
 
 See [docs/judge-access.md](docs/judge-access.md) for the exact request format.
 
-## Quick Demo Run (Operator View)
+## Quick Demo Run (Public Repo Operator View)
 
-Use one mint, run attribution, and get a decision output:
+Run the public shell locally:
 
 ```bash
-python3 -m onchain_monitor.causal_funding \
-  --mint <TOKEN_MINT> \
-  --enable-advanced-signals \
-  --enable-decision-policy \
-  --decision-policy-path data/calibration/causal_decision_policy_v2.json \
-  --enable-drift-closure \
-  --output data/causal_reports/<TOKEN_MINT>_demo.json
+cd demo_shell
+cp .env.example .env
+pip install -r requirements.txt
+python app.py
 ```
+
+Then open `http://127.0.0.1:7860` and submit a mint.
+
+Optional API call through the shell:
+
+```bash
+curl -s -X POST http://127.0.0.1:7860/api/analyze \
+  -H 'Content-Type: application/json' \
+  -d '{"mint":"DoBAMMqcedjoWV3m7JEU1pAzZjkQqeQzbdLUA2etbonk","judge_mode":false}'
+```
+
+Notes:
+
+- When the private backend is unreachable, the shell returns a clearly marked redacted fallback sample.
+- Full private-engine walkthrough is provided in controlled judge/pilot mode.
 
 Expected visible output:
 
@@ -106,11 +118,11 @@ Expected visible output:
 
 ## Internal Calibration Snapshot (Current)
 
-From the current internal provisional labeled set:
+From the current internal provisional labeled set (rounded for public sharing):
 
-- Rug catch rate (BLOCK + REVIEW): `0.8857`
-- Safe block rate: `0.05`
-- Block precision: `0.9688`
+- Rug catch rate (BLOCK + REVIEW): `~89%`
+- Safe block rate: `~5%`
+- Block precision: `~97%`
 
 This is exactly the direction we want for institutional workflows: high catch quality with controlled false blocks.
 

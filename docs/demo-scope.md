@@ -34,11 +34,11 @@ Current first-pass runtime target remains approximately `1-2 minutes` per token 
 
 ## Current Internal Evaluation Snapshot
 
-From current provisional replay calibration:
+From current provisional replay calibration (rounded for public sharing):
 
-- Rug catch rate (BLOCK + REVIEW): `0.8857`
-- Safe block rate: `0.05`
-- Block precision: `0.9688`
+- Rug catch rate (BLOCK + REVIEW): `~89%`
+- Safe block rate: `~5%`
+- Block precision: `~97%`
 
 These values are included to show practical operating posture, not marketing-only claims.
 

@@ -34,6 +34,20 @@ def _safe_json(path: Path) -> dict[str, Any]:
         return {}
 
 
+def _to_float(value: Any, default: float = 0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _to_int(value: Any, default: int = 0) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
 def _render_view(payload: dict[str, Any]) -> str:
     demo_view = payload.get("demo_view") if isinstance(payload.get("demo_view"), dict) else {}
     decision = demo_view.get("decision") if isinstance(demo_view.get("decision"), dict) else {}
@@ -45,18 +59,20 @@ def _render_view(payload: dict[str, Any]) -> str:
     if status not in {"ALLOW", "REVIEW", "BLOCK"}:
         status = "REVIEW"
 
-    evidence_items = "".join(
-        (
-            "<li><b>{seed}</b> -> {term}, flow={flow:.2f} SOL, depth={depth}</li>".format(
-                seed=str(row.get("seed_role") or ""),
-                term=str(row.get("terminal") or ""),
-                flow=float(row.get("flow_sol") or 0.0),
-                depth=int(row.get("depth") or 0),
-            )
+    evidence_rows: list[dict[str, Any]] = []
+    for row in evidence[:5]:
+        if not isinstance(row, dict):
+            continue
+        evidence_rows.append(
+            {
+                "seed": str(row.get("seed_role") or ""),
+                "terminal": str(row.get("terminal") or ""),
+                "flow": _to_float(row.get("flow_sol"), 0.0),
+                "depth": _to_int(row.get("depth"), 0),
+            }
         )
-        for row in evidence[:5]
-        if isinstance(row, dict)
-    ) or "<li>No evidence rows.</li>"
+    if not evidence_rows:
+        evidence_rows.append({"seed": "", "terminal": "No evidence rows.", "flow": None, "depth": None})
 
     return render_template_string(
         """
@@ -97,6 +113,12 @@ def _render_view(payload: dict[str, Any]) -> str:
       </form>
     </div>
 
+    {% if backend_error %}
+    <div class="panel" style="border-color:#6f5127;">
+      Backend is unavailable or returned an error. Showing a redacted fallback sample ({{backend_error}}).
+    </div>
+    {% endif %}
+
     <div class="grid">
       <div class="panel">
         <div class="k">Decision</div>
@@ -122,7 +144,15 @@ def _render_view(payload: dict[str, Any]) -> str:
 
     <div class="panel">
       <div class="k">Hard Evidence</div>
-      <ul>{{ evidence|safe }}</ul>
+      <ul>
+      {% for row in evidence_rows %}
+        {% if row.flow is none %}
+        <li>{{ row.terminal }}</li>
+        {% else %}
+        <li><b>{{ row.seed }}</b> -> {{ row.terminal }}, flow={{ '%.2f'|format(row.flow) }} SOL, depth={{ row.depth }}</li>
+        {% endif %}
+      {% endfor %}
+      </ul>
     </div>
   </div>
 </body>
@@ -131,8 +161,8 @@ def _render_view(payload: dict[str, Any]) -> str:
         mint=str(demo_view.get("mint") or ""),
         judge=bool(demo_view.get("judge_mode")),
         status=status,
-        risk_score=float(decision.get("risk_score") or 0.0),
-        conf=float(decision.get("confidence") or 0.0),
+        risk_score=_to_float(decision.get("risk_score"), 0.0),
+        conf=_to_float(decision.get("confidence"), 0.0),
         verdict=str(agent.get("verdict_level") or "").upper(),
         conclusion=str(agent.get("risk_conclusion") or ""),
         controller=str(agent.get("who_controls") or ""),
@@ -140,14 +170,15 @@ def _render_view(payload: dict[str, Any]) -> str:
         mode=str(drift.get("mode") or "unknown"),
         drift=bool(drift.get("drift_detected")),
         recal=bool(drift.get("recalibration_needed")),
-        evidence=evidence_items,
+        evidence_rows=evidence_rows,
+        backend_error=str(payload.get("error") or ""),
     )
 
 
-def _fallback_payload(mint: str, judge_mode: bool) -> dict[str, Any]:
+def _fallback_payload(mint: str, judge_mode: bool, ok: bool = True) -> dict[str, Any]:
     sample = _safe_json(SAMPLE_FILE)
     return {
-        "ok": True,
+        "ok": ok,
         "source": "sample_fallback",
         "demo_view": {
             "mint": mint,
@@ -155,8 +186,8 @@ def _fallback_payload(mint: str, judge_mode: bool) -> dict[str, Any]:
             "judge_mode": judge_mode,
             "decision": {
                 "action": (sample.get("decision_policy") or {}).get("action", "REVIEW"),
-                "risk_score": float((sample.get("risk") or {}).get("score") or 0.0),
-                "confidence": float((sample.get("risk") or {}).get("confidence") or 0.0),
+                "risk_score": _to_float((sample.get("risk") or {}).get("score"), 0.0),
+                "confidence": _to_float((sample.get("risk") or {}).get("confidence"), 0.0),
                 "confidence_label": str((sample.get("risk") or {}).get("confidence_label") or ""),
                 "reason": str(((sample.get("decision_policy") or {}).get("reason") or "fallback_sample")),
             },
@@ -194,6 +225,10 @@ def analyze_form() -> Any:
     mint = str(request.form.get("mint") or "").strip()
     mode = str(request.form.get("mode") or "public").strip().lower()
     judge_mode = mode == "judge"
+    if not mint:
+        payload = _fallback_payload("", judge_mode, ok=False)
+        payload["error"] = "missing_mint"
+        return _render_view(payload), 400
 
     req_payload = {
         "mint": mint,
@@ -209,15 +244,20 @@ def analyze_form() -> Any:
     try:
         resp = requests.post(BACKEND_URL, json=req_payload, headers=headers, timeout=TIMEOUT_SEC)
         if resp.status_code >= 300:
-            payload = _fallback_payload(mint, judge_mode)
+            payload = _fallback_payload(mint, judge_mode, ok=False)
             payload["error"] = f"backend_http_{resp.status_code}"
         else:
-            payload = resp.json()
+            body = resp.json()
+            if isinstance(body, dict):
+                payload = body
+            else:
+                payload = _fallback_payload(mint, judge_mode, ok=False)
+                payload["error"] = "backend_invalid_payload"
     except Exception:
-        payload = _fallback_payload(mint, judge_mode)
+        payload = _fallback_payload(mint, judge_mode, ok=False)
         payload["error"] = "backend_unreachable"
 
-    return _render_view(payload if isinstance(payload, dict) else _fallback_payload(mint, judge_mode))
+    return _render_view(payload if isinstance(payload, dict) else _fallback_payload(mint, judge_mode, ok=False))
 
 
 @APP.post("/api/analyze")
@@ -225,6 +265,8 @@ def analyze_api() -> Any:
     body = request.get_json(silent=True) or {}
     mint = str(body.get("mint") or "").strip()
     judge_mode = bool(body.get("judge_mode"))
+    if not mint:
+        return jsonify({"ok": False, "error": "missing_mint"}), 400
 
     req_payload = {
         "mint": mint,
@@ -240,10 +282,20 @@ def analyze_api() -> Any:
     try:
         resp = requests.post(BACKEND_URL, json=req_payload, headers=headers, timeout=TIMEOUT_SEC)
         if resp.status_code >= 300:
-            return jsonify(_fallback_payload(mint, judge_mode)), 200
-        return jsonify(resp.json()), 200
+            payload = _fallback_payload(mint, judge_mode, ok=False)
+            payload["error"] = f"backend_http_{resp.status_code}"
+            payload["upstream_status"] = resp.status_code
+            return jsonify(payload), 502
+        upstream = resp.json()
+        if not isinstance(upstream, dict):
+            payload = _fallback_payload(mint, judge_mode, ok=False)
+            payload["error"] = "backend_invalid_payload"
+            return jsonify(payload), 502
+        return jsonify(upstream), 200
     except Exception:
-        return jsonify(_fallback_payload(mint, judge_mode)), 200
+        payload = _fallback_payload(mint, judge_mode, ok=False)
+        payload["error"] = "backend_unreachable"
+        return jsonify(payload), 503
 
 
 if __name__ == "__main__":

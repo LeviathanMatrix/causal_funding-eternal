@@ -14,19 +14,20 @@ Show a complete operator decision loop:
 ## Demo Inputs
 
 - Primary mint: `DoBAMMqcedjoWV3m7JEU1pAzZjkQqeQzbdLUA2etbonk`
-- Optional backup mint: `TODO_BACKUP_MINT`
+- Optional backup mint: `So11111111111111111111111111111111111111112` (wSOL)
 
-## Command
+## Public Demo Command
 
 ```bash
-python3 -m onchain_monitor.causal_funding \
-  --mint <TOKEN_MINT> \
-  --enable-advanced-signals \
-  --enable-decision-policy \
-  --decision-policy-path data/calibration/causal_decision_policy_v2.json \
-  --enable-drift-closure \
-  --output data/causal_reports/<TOKEN_MINT>_demo.json
+cd demo_shell
+cp .env.example .env
+pip install -r requirements.txt
+python app.py
 ```
+
+Then open `http://127.0.0.1:7860` and run the mint in public/judge display mode.
+
+For controlled evaluators, the same shell can forward to the private engine endpoint through environment configuration.
 
 ## Must-Capture Frames For Video
 
@@ -42,4 +43,3 @@ python3 -m onchain_monitor.causal_funding \
 - Sensitive API keys
 - Proprietary threshold internals
 - Full production architecture details
-

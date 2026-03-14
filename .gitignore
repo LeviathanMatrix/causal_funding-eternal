@@ -1,0 +1,8 @@
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+
+# Local environment files
+.env
+demo_shell/.env
