@@ -6,3 +6,4 @@ __pycache__/
 # Local environment files
 .env
 demo_shell/.env
+demo_shell/.local_state/

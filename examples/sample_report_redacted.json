@@ -1,24 +1,153 @@
 {
-  "mint": "REDACTED_MINT",
-  "pool": "REDACTED_POOL",
+  "mint": "DoBA****bonk",
+  "pool": "GP4B****FSZX",
   "risk": {
     "score": 83.22,
     "confidence": 0.75,
-    "confidence_label": "high"
+    "confidence_label": "high",
+    "dimensions": {
+      "R1_control": {"score": 35.0},
+      "R2_funding": {"score": 38.0},
+      "R3_convergence": {"score": 68.5},
+      "R5_history": {"score": 0.0},
+      "R6_lp_behavior": {"score": 40.0}
+    }
   },
   "decision_policy": {
     "action": "BLOCK",
     "reason": "score_above_block_and_confident",
-    "thresholds": "REDACTED_PRIVATE_POLICY"
+    "thresholds": {
+      "block_threshold": 70.0,
+      "review_threshold": 45.0,
+      "min_confidence_for_block": 0.55
+    }
   },
   "judgement": {
     "verdict_level": "high",
-    "risk_conclusion": "high_risk: recurring operator pattern with credible execution surface"
+    "risk_conclusion": "Recurring operator pattern with credible execution surface.",
+    "confidence": 0.7875,
+    "verdict_reasons": ["recurrence_risk", "execution_risk"]
+  },
+  "meta": {
+    "runtime_ms": 87157,
+    "api_calls": 68,
+    "tx_fetched": 5531
+  },
+  "public_brief": {
+    "headline": "OILLESS (OILLESS) Institutional Risk Brief",
+    "verdict": "Elevated Risk",
+    "summary": "Elevated Risk. Risk 83.2/100 with confidence 78.8%. Funding paths=5, LP danger=false, repeat_offender=true.",
+    "token_profile": {
+      "token_name": "OILLESS",
+      "token_symbol": "OILLESS",
+      "mint": "DoBA****bonk",
+      "pool": "GP4B****FSZX"
+    },
+    "risk_overview": {
+      "composite_score": 83.22,
+      "confidence_pct": 75.0,
+      "verdict_level": "high",
+      "risk_conclusion": "Recurring operator pattern with credible execution surface.",
+      "dimension_scores": {
+        "R1_control": 35.0,
+        "R2_funding": 38.0,
+        "R3_convergence": 68.5,
+        "R5_history": 0.0,
+        "R6_lp_behavior": 40.0
+      }
+    },
+    "funding_chain": {
+      "funding_path_count": 5,
+      "total_traced_flow_sol": 35352.77,
+      "max_path_flow_sol": 35282.88,
+      "cycle_path_count": 4,
+      "top_source": {
+        "address": "ARu4****5SZn",
+        "share_pct": 99.8
+      }
+    },
+    "lp_surface": {
+      "score": 40.0,
+      "danger": false,
+      "status": "unknown",
+      "level": "medium"
+    },
+    "control_and_permissions": {
+      "primary_controller": "WLHv****JVVh",
+      "controller_confidence_pct": 75.1,
+      "token_permissions": {
+        "program_label": "spl-token",
+        "score": 43.0,
+        "summary": "program=spl-token; mint_authority=open; update_authority=open",
+        "high_risk_signals": [],
+        "extension_labels": [],
+        "default_account_state": ""
+      },
+      "metadata_legitimacy": {
+        "risk_score": 22.0,
+        "issuer_count": 1,
+        "primary_total_assets": 3,
+        "related_asset_count": 2,
+        "historical_asset_count": 3,
+        "reused_symbol_count": 1,
+        "reasons": ["metadata_complete", "verified_creator_present"]
+      },
+      "controller_dossier": {
+        "wallet_count": 5,
+        "service_funded_wallet_count": 2,
+        "primary_identity_name": "Launch Authority",
+        "primary_identity_type": "protocol",
+        "primary_funder": "REDACTED",
+        "primary_funder_label": "service"
+      },
+      "mint_authority": {
+        "state": "open"
+      },
+      "issuer_pattern_summary": {
+        "reused_symbol_count": 1
+      },
+      "related_assets": [
+        {"mint": "4nsw****bonk", "symbol": "", "name": "Related 1"},
+        {"mint": "8opv****bonk", "symbol": "", "name": "Related 2"}
+      ]
+    },
+    "cross_token_intel": {
+      "shared_token_count": 2,
+      "max_shared_wallets_per_token": 3,
+      "repeated_operator_wallet_count": 3
+    },
+    "hard_evidence": {
+      "token_permissions": {
+        "program_label": "spl-token",
+        "score": 43.0,
+        "high_risk_signals": [],
+        "extension_labels": []
+      },
+      "metadata_legitimacy": {
+        "risk_score": 22.0,
+        "issuer_count": 1,
+        "related_asset_count": 2,
+        "historical_asset_count": 3,
+        "reused_symbol_count": 1,
+        "reasons": ["metadata_complete", "verified_creator_present"]
+      }
+    },
+    "attribution": {
+      "public_signals": [
+        "Funding concentration anomaly",
+        "Convergence anomaly",
+        "Execution-root wallet recovered"
+      ],
+      "risk_surfaces": {
+        "hidden_control": {"score": 76.0},
+        "recurrence_risk": {"score": 100.0}
+      }
+    }
   },
   "highlights": [
-    "Multi-dimensional risk with cross-signal penalties",
-    "Evidence-backed operator-facing decision output",
-    "Drift-aware policy governance status included"
+    "Decision-grade output with visible control, permission, and issuer surfaces.",
+    "Agent-backed executive judgement without exposing attribution internals.",
+    "What-if and review workflow available in the public demo console."
   ],
   "note": "This is a redacted demo artifact. Production internals are private."
 }
