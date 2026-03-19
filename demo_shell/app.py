@@ -18,7 +18,7 @@ if load_dotenv is not None:
 
 APP = Flask(__name__)
 
-BACKEND_URL = os.environ.get("CF_DEMO_BACKEND_URL", "http://127.0.0.1:7878/api/analyze").strip()
+BACKEND_URL = os.environ.get("CF_DEMO_BACKEND_URL", "").strip()
 BACKEND_API_KEY = os.environ.get("CF_DEMO_API_KEY", "").strip()
 JUDGE_TOKEN = os.environ.get("CF_DEMO_JUDGE_TOKEN", "").strip()
 TIMEOUT_SEC = float(os.environ.get("CF_DEMO_TIMEOUT_SEC", "90") or 90)
@@ -102,7 +102,7 @@ def _render_view(payload: dict[str, Any]) -> str:
   <div class="wrap">
     <div class="panel">
       <h2>causal_funding Demo Shell</h2>
-      <p>Open demo layer. Core production logic runs in private backend.</p>
+      <p>Open demo layer for public and judge-facing evaluation flows.</p>
       <form method="post" action="/analyze">
         <input type="text" name="mint" required placeholder="Solana mint" value="{{mint}}" />
         <select name="mode">
@@ -242,6 +242,8 @@ def analyze_form() -> Any:
         headers["X-Judge-Token"] = JUDGE_TOKEN
 
     try:
+        if not BACKEND_URL:
+            raise RuntimeError("backend_not_configured")
         resp = requests.post(BACKEND_URL, json=req_payload, headers=headers, timeout=TIMEOUT_SEC)
         if resp.status_code >= 300:
             payload = _fallback_payload(mint, judge_mode, ok=False)

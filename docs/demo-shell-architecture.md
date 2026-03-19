@@ -7,9 +7,9 @@
 It is intentionally thin:
 
 - Collect input (mint + mode)
-- Forward request to private backend API
+- Forward request to configured analysis endpoint
 - Render decision + evidence summary
-- Hide core internals
+- Keep the demo surface simple and reviewable
 
 ## Layering
 
@@ -18,20 +18,20 @@ It is intentionally thin:
 - Public/Judge display modes
 - Redacted fallback sample
 
-2. **Private Production Engine (Not Open Source)**
-- Causal attribution internals
-- Risk scoring internals
-- Policy internals and advanced orchestration
+2. **Connected Analysis Service**
+- Decision output generation
+- Evidence packaging
+- Evaluator-facing access modes
 
 ## Why This Design
 
 - Demonstrates real product behavior in public
-- Protects proprietary logic and private connectors
+- Keeps the public repository focused and understandable
 - Supports judge/pilot access without leaking core IP
 
 ## Environment Variables
 
-- `CF_DEMO_BACKEND_URL`: backend `/api/analyze` endpoint
+- `CF_DEMO_BACKEND_URL`: analysis `/api/analyze` endpoint
 - `CF_DEMO_API_KEY`: optional bearer key
 - `CF_DEMO_JUDGE_TOKEN`: optional judge token for judge mode
 
@@ -43,4 +43,3 @@ cp .env.example .env
 pip install -r requirements.txt
 python app.py
 ```
-

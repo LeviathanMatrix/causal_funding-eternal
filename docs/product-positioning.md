@@ -66,6 +66,6 @@ This creates operational compounding that simple score-only tools cannot match q
 We are intentionally controlled in exposure.
 
 Public demo shows capability and decision value.
-Core internals remain private until broader production hardening is complete.
+Extended evaluator access is available without turning the repository into a full implementation dump.
 
-That balance is intentional: clear product proof without leaking the full execution moat.
+That balance is intentional: clear product proof without unnecessary implementation exposure.

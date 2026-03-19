@@ -27,7 +27,7 @@ python app.py
 
 Then open `http://127.0.0.1:7860` and run the mint in public/judge display mode.
 
-For controlled evaluators, the same shell can forward to the private engine endpoint through environment configuration.
+For controlled evaluators, the same shell can forward to a configured analysis endpoint through environment configuration.
 
 ## Must-Capture Frames For Video
 
@@ -39,7 +39,7 @@ For controlled evaluators, the same shell can forward to the private engine endp
 
 ## What To Avoid Showing
 
-- Internal private endpoints
+- Non-public endpoints
 - Sensitive API keys
-- Proprietary threshold internals
-- Full production architecture details
+- Internal configuration details
+- Non-public implementation details

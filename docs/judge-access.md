@@ -1,6 +1,6 @@
 # Judge Access (Controlled)
 
-This repository is a public demo surface. The full production engine is private.
+This repository is a public demo surface with optional controlled evaluator access.
 
 ## Access Modes
 
@@ -30,8 +30,6 @@ Contact:
 
 ## What Remains Private
 
-- Full proprietary architecture
-- Internal weighting and threshold internals
-- Private data connectors
-- Internal training and production orchestration logic
-
+- Non-public deployment configuration
+- Internal operating materials
+- Evaluator credentials and restricted access settings

@@ -36,22 +36,22 @@ The Eternal demo is designed to prove production-minded decision quality, not ju
 - Decision layer: ALLOW / REVIEW / BLOCK
 - Governance layer: drift-aware threshold control and recalibration signal
 
-## Public Demo vs Production Engine
+## Demo Scope
 
 This repository is the **public demo layer**.
 
 - Public demo repo: product narrative, demo behavior, sample artifacts, and weekly progress.
-- Demo shell code: `demo_shell/` (UI + API forwarding only, no core algorithm internals).
-- Private production engine: proprietary internals, private data connectors, internal threshold logic, and full training/ops pipeline.
+- Demo shell code: `demo_shell/` for evaluator-facing input, rendering, and demo routing.
+- Judge / pilot access: deeper evaluation flow available on request.
 
-The demo is powered by the production engine, but core internals are intentionally not open-sourced.
+The repository is intentionally focused on product behavior, decision outputs, and reviewer-facing materials.
 
 ## Demo Shell (Open Source Layer)
 
 `demo_shell` is the upload-ready public layer for Eternal.
 
 - Input collection and mode switching (public/judge)
-- API forwarding to private backend
+- API forwarding to configured analysis backend
 - Decision + evidence rendering
 - Fallback sample for presentation safety
 
@@ -97,8 +97,8 @@ curl -s -X POST http://127.0.0.1:7860/api/analyze \
 
 Notes:
 
-- When the private backend is unreachable, the shell returns a clearly marked redacted fallback sample.
-- Full private-engine walkthrough is provided in controlled judge/pilot mode.
+- When the configured backend is unreachable, the shell returns a clearly marked redacted fallback sample.
+- Extended walkthroughs are available in controlled judge/pilot mode.
 
 Expected visible output:
 
@@ -116,6 +116,17 @@ Expected visible output:
 - Calibrated decision policy from historical replay data
 - Drift closure loop with automatic threshold tightening under unstable regimes
 
+## Week 2 Progress
+
+Week 2 focused on runtime hardening and report depth.
+
+- Agent stability issue fixed and validated to clean completion on the current evaluated flow
+- Controller dossier layer added for stronger operator-facing wallet context
+- Token permission surface expanded for better control-risk visibility
+- Metadata and issuer-footprint coverage expanded for stronger diligence quality
+
+See [docs/week-2-update.md](docs/week-2-update.md) for the full update.
+
 ## Internal Calibration Snapshot (Current)
 
 From the current internal provisional labeled set (rounded for public sharing):
@@ -126,23 +137,22 @@ From the current internal provisional labeled set (rounded for public sharing):
 
 This is exactly the direction we want for institutional workflows: high catch quality with controlled false blocks.
 
-## What Is Open vs Private
+## Repository Focus
 
 This repository is intentionally product-facing.
 
-Open in demo:
+Included here:
 
 - Product positioning
 - Demo scope
 - Roadmap and integration direction
 - Public-facing operating narrative
 
-Private by design:
+Not included here:
 
-- Full production architecture
-- Internal weighting details and threshold internals
-- Private data connectors and enrichment logic
-- Full model-training pipeline and proprietary evidence transformations
+- Full deployment configuration
+- Non-public connectors and evaluator access configuration
+- Internal operating materials not required for public demo review
 
 ## Who This Is Built For
 
@@ -172,6 +182,7 @@ Current access is controlled for judges and selected pilot counterparts.
 - `docs/weekly-update-template.md`
 - `docs/video-script-weekly.md`
 - `docs/demo-shell-architecture.md`
+- `docs/week-2-update.md`
 - `examples/sample_report_redacted.json`
 - `demo_shell/`
 

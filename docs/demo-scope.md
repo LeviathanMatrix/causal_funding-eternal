@@ -30,7 +30,7 @@ Current first-pass runtime target remains approximately `1-2 minutes` per token 
 - The system outputs decisions, evidence, and governance signals.
 - Agent-driven interpretation turns raw on-chain evidence into operator-readable conclusions.
 - The product is designed for listing, investment, and pre-trade workflows.
-- There is a credible path to restricted institutional deployment.
+- There is a credible path to evaluator and institutional deployment.
 
 ## Current Internal Evaluation Snapshot
 
@@ -42,12 +42,11 @@ From current provisional replay calibration (rounded for public sharing):
 
 These values are included to show practical operating posture, not marketing-only claims.
 
-## What Is Not Public In Demo
+## What Is Not Included In This Repo
 
-- Full proprietary architecture and orchestration internals
-- Sensitive threshold internals and weighting details
-- Private data and enrichment connectors
-- Full training pipeline and private operational tuning logic
+- Full deployment configuration
+- Non-public data access configuration
+- Internal tuning and operating materials not required for demo review
 
 ## Success Criteria
 
@@ -56,4 +55,4 @@ The demo succeeds when a reviewer can clearly see:
 - Why the product matters specifically on Solana
 - Why decision output is stronger than score-only output
 - Why the evidence package is practical for real workflows
-- Why the private moat remains intact despite a strong public demo
+- Why the product can support serious review workflows beyond a basic public demo
