@@ -25,13 +25,13 @@ Most market tools stop at one of these layers:
 - static dashboards
 - opaque black-box scores
 
-`causal_funding` is designed as a closed operating loop:
+`causal_funding` is designed as a decision workflow:
 
-1. Build causal attribution from seed wallets to upstream control surfaces
-2. Compute multi-dimensional risk with cross-signal interaction logic
+1. Analyze funding and control surfaces
+2. Build decision-grade risk context
 3. Package evidence into operator-readable outputs
 4. Produce action-level decisions (ALLOW / REVIEW / BLOCK)
-5. Govern policy under drift and trigger recalibration when regime shifts appear
+5. Support downstream review and repeated evaluation
 
 ## Agent Intelligence Layer
 
@@ -48,16 +48,16 @@ Our direction is to provide:
 - Decision outputs, not only scores
 - Evidence chain suitable for internal review workflows
 - Agent-driven decision narrative from technical evidence
-- Threshold calibration grounded in replayed labeled outcomes
-- Drift-aware policy control to reduce model staleness risk
+- Evaluator-readable consistency across repeated review flows
+- Stronger operational confidence through continued validation
 
 ## Why This Is Hard To Replicate Quickly
 
 The defensibility is in the compounding loop, not in one algorithm headline.
 
-- Causal evidence chain + policy calibration + drift governance are interdependent
+- Evidence quality, report design, and review workflow reinforce each other
 - Report quality improves with repeated operational feedback
-- Decision consistency improves as replay and governance artifacts accumulate
+- Decision consistency improves as evaluator workflows mature
 
 This creates operational compounding that simple score-only tools cannot match quickly.
 

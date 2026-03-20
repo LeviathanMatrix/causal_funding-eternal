@@ -2,23 +2,23 @@
 
 ## Eternal Build Focus
 
-The current phase is execution quality, decision quality, and governance quality.
+The current phase is execution quality, decision quality, and review quality.
 
 We are already beyond concept stage. The roadmap is about hardening a working system into a stronger institutional candidate.
 
 ## Near-Term Priorities
 
-### 1) Decision Governance Hardening
+### 1) Decision Reliability Hardening
 
-- Continue threshold calibration on expanded labeled replay sets
-- Improve policy robustness across market regimes
-- Tighten decision consistency between risk engine and policy output
+- Improve decision consistency across evaluated cases
+- Continue validation on expanded internal case sets
+- Strengthen operator trust in the final decision output
 
-### 2) Drift Closed-Loop Expansion
+### 2) Review Workflow Expansion
 
-- Improve drift signal fidelity and alert granularity
-- Add automated recalibration workflows for persistent regime changes
-- Expand auditability of policy shifts and decision deltas
+- Improve recheck and repeated-review workflows
+- Expand evaluator-facing case comparison and decision-delta visibility
+- Improve operational clarity when a case changes over time
 
 ### 3) Evidence Productization
 
@@ -28,7 +28,7 @@ We are already beyond concept stage. The roadmap is about hardening a working sy
 
 ### 4) Controlled Integration Readiness
 
-- Maintain restricted API evaluation mode
+- Maintain controlled evaluator access
 - Prepare higher-concurrency batch workflows for pilot users
 - Expand integration materials for exchanges/funds/security teams
 
@@ -40,7 +40,7 @@ Priority order:
 
 1. decision reliability
 2. evidence reliability
-3. governance reliability
+3. review reliability
 4. controlled pilot integrations
 5. broader release
 
@@ -51,5 +51,5 @@ Priority order:
 Long-term target:
 
 - trusted decision layer for listing, investing, and pre-trade controls
-- evidence and governance standards that survive real institutional scrutiny
-- compounding quality through closed-loop feedback and controlled deployment
+- evidence and review standards that survive real institutional scrutiny
+- compounding quality through repeated feedback and controlled deployment

@@ -4,28 +4,30 @@
 
 Week 2 focused on two things:
 
-- hardening agent runtime reliability
-- expanding report depth for evaluator-facing decision workflows
+- hardening evaluator-facing runtime behavior
+- turning the public layer into a clearer decision and review experience
 
-The result is a stronger operator-facing build: more stable execution, richer control-surface coverage, and better issuer context in the final report.
+The result is a stronger evaluator-facing build: deeper control and issuer context, a more useful public console, and a cleaner path from raw analysis to an operator-readable decision.
 
 ## What We Shipped
 
-### 1) Agent Runtime Hardening
+### 1) Decision Simulation & Review Console
 
-We fixed a real agent stability issue that could cause runs to terminate in a failed state at the end of processing.
+The public demo layer was upgraded from a thin request shell into a clearer evaluator-facing console.
 
 What changed at a high level:
 
-- tightened event lifecycle handling
-- restricted the heaviest reasoning steps to the final report stages
-- improved completion behavior for the end-of-run handoff
+- added an executive decision surface
+- added evidence surfaces for funding, control, permissions, and issuer context
+- added a hard-evidence brief and decision trace layer
+- added a what-if simulation workflow
+- added case review and watchlist / recheck support
 
 Current outcome:
 
-- stable end-to-end completion on the evaluated sample flow
-- clean completion state in the latest validation run
-- no need to disable the agent layer to achieve stability
+- evaluators can move from verdict to supporting evidence more quickly
+- demo behavior is closer to a real review product than a simple shell
+- the public repo now communicates product value more clearly without exposing core internals
 
 ### 2) Controller Dossier Enrichment
 
@@ -69,6 +71,22 @@ Why this matters:
 
 This pushes the product further toward due-diligence quality output rather than a narrow score-only scanner.
 
+### 5) Agent Runtime Stabilization Work
+
+We continued hardening the sidecar agent runtime, especially around final-stage synthesis.
+
+What changed at a high level:
+
+- narrowed the heaviest reasoning path to end-stage events
+- improved evaluator-safe handling of agent completion states
+- validated the pipeline against live end-to-end runs instead of presentation-only samples
+
+Current outcome:
+
+- the main analysis pipeline completes and exports correctly
+- agent synthesis remains usable but final-stage timeout handling is still under active stabilization
+- this is now an engineering reliability track, not a hidden or ignored issue
+
 ## Validation
 
 Week 2 changes were not treated as presentation-only updates. They were validated through:
@@ -77,11 +95,17 @@ Week 2 changes were not treated as presentation-only updates. They were validate
 - targeted tests for agent runtime behavior
 - end-to-end live runs on the current sample flow
 
-Latest runtime result on the validated sample:
+Latest validated public-console result:
 
-- agent state: `COMPLETED`
-- processed events: `4/4`
-- errors: `0`
+- executive decision + evidence surfaces rendered correctly
+- what-if simulation path produced a meaningful decision delta
+- case review / watchlist flow completed in local endpoint tests
+
+Latest live runtime observation on the current evaluated sample:
+
+- main analysis run completed successfully
+- agent processed the emitted event stream but final-stage timeout handling still needs hardening
+- current engineering focus is making end-of-run agent behavior consistently clean under heavier live conditions
 
 ## Product Direction
 
@@ -91,13 +115,13 @@ The goal remains the same:
 - operator-readable evidence, not black-box signaling
 - controlled evaluation access before broader rollout
 
-Week 2 moved the system forward on reliability, control-surface depth, and evaluator readability.
+Week 2 moved the system forward on evaluator readability, control-surface depth, and product-level decision workflow design.
 
 ## Next Focus
 
 Near-term focus remains:
 
 - stronger evidence packaging
-- better reviewer-facing summaries
-- tighter institutional reporting quality
+- cleaner agent final-stage reliability
+- tighter reviewer-facing summaries
 - continued hardening of controlled evaluation workflows

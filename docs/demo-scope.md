@@ -2,16 +2,16 @@
 
 ## Demo Goal
 
-Prove that `causal_funding` can support real operator decisions on Solana in minutes, with explainable outputs and policy governance.
+Prove that `causal_funding` can support real operator decisions on Solana in minutes, with explainable outputs and review-ready workflow support.
 
 ## Judge-Facing Flow
 
 1. Input a mint address
 2. Auto-discover pool context when available
-3. Run causal attribution and forensic synthesis
+3. Run the analysis flow and package the result into a review-ready case
 4. Produce risk report and evidence package
 5. Return ALLOW / REVIEW / BLOCK decision
-6. Attach drift-governance status (normal vs strict mode)
+6. Attach operating context for evaluator review
 
 ## What We Intentionally Showcase
 
@@ -27,14 +27,14 @@ Current first-pass runtime target remains approximately `1-2 minutes` per token 
 ## Key Demo Messages
 
 - This is not a basic rug checker.
-- The system outputs decisions, evidence, and governance signals.
+- The system outputs decisions, evidence, and evaluator-facing context.
 - Agent-driven interpretation turns raw on-chain evidence into operator-readable conclusions.
 - The product is designed for listing, investment, and pre-trade workflows.
 - There is a credible path to evaluator and institutional deployment.
 
 ## Current Internal Evaluation Snapshot
 
-From current provisional replay calibration (rounded for public sharing):
+From current internal evaluation snapshots (rounded for public sharing):
 
 - Rug catch rate (BLOCK + REVIEW): `~89%`
 - Safe block rate: `~5%`

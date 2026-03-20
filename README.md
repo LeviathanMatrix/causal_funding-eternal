@@ -6,20 +6,20 @@
 
 ## Judge TL;DR
 
-- Not a score-only tool: this demo outputs decision + evidence + governance status.
+- Not a score-only tool: this demo outputs decision + evidence + operating status.
 - Built for Solana speed: designed for real-time listing, investment, and pre-trade workflows.
 - Agent-driven reasoning layer: converts technical evidence into operator-facing judgment.
-- Production-minded quality controls: threshold calibration + drift-aware policy tightening.
+- Production-minded quality controls for stable evaluator-facing decisions.
 - Internal replay quality band: rug catch `~89%`, safe block `~5%`, block precision `~97%`.
 
-This is not a toy rug checker. The system runs as a closed loop:
+This is not a toy rug checker. The system is designed as a decision workflow:
 
-1. Causal funding attribution
-2. Multi-dimensional risk scoring
-3. Evidence-grade forensic packaging
-4. Agent-driven, operator-facing judgment synthesis
-5. Calibrated ALLOW / REVIEW / BLOCK policy
-6. Drift-aware policy governance
+1. Funding and control analysis
+2. Multi-surface risk evaluation
+3. Evidence packaging
+4. Agent-assisted judgment synthesis
+5. ALLOW / REVIEW / BLOCK decision output
+6. Ongoing evaluator-facing review workflow
 
 ## Why Solana
 
@@ -34,7 +34,7 @@ The Eternal demo is designed to prove production-minded decision quality, not ju
 - Input: token mint (pool can be auto-detected)
 - Output: structured risk report + evidence package
 - Decision layer: ALLOW / REVIEW / BLOCK
-- Governance layer: drift-aware threshold control and recalibration signal
+- Review layer: decision output, evidence context, and evaluator-facing workflow
 
 ## Demo Scope
 
@@ -52,7 +52,10 @@ The repository is intentionally focused on product behavior, decision outputs, a
 
 - Input collection and mode switching (public/judge)
 - API forwarding to configured analysis backend
-- Decision + evidence rendering
+- Executive decision rendering
+- Evidence surfaces for funding, control, permissions, and issuer context
+- What-if simulation for evaluator-facing scenario analysis
+- Case review and watchlist/recheck workflow
 - Fallback sample for presentation safety
 
 Quick run:
@@ -104,26 +107,27 @@ Expected visible output:
 
 - Risk score + confidence
 - ALLOW / REVIEW / BLOCK action
-- Evidence summary and forensic highlights
-- Drift governance status
+- Evidence summary and review highlights
+- Decision-ready evaluator context
 
 ## Current Capability Highlights
 
-- Causal path tracing from project-linked seeds to upstream sources
-- Multi-dimensional risk engine with cross-signal penalties
-- Forensic recovery of execution-root operators and creation anchors
-- Agent-driven reasoning artifacts for operator review (technical evidence -> decision narrative)
-- Calibrated decision policy from historical replay data
-- Drift closure loop with automatic threshold tightening under unstable regimes
+- Funding and control-surface analysis for evaluator workflows
+- Multi-surface risk evaluation
+- Review-ready evidence packaging
+- Agent-assisted decision narrative for operator review
+- Decision output aligned to real review workflows
+- Public console for simulation, review, and recheck
 
 ## Week 2 Progress
 
-Week 2 focused on runtime hardening and report depth.
+Week 2 focused on evaluator-facing product depth and runtime hardening.
 
-- Agent stability issue fixed and validated to clean completion on the current evaluated flow
+- Public demo shell upgraded into a Decision Simulation & Review Console
 - Controller dossier layer added for stronger operator-facing wallet context
 - Token permission surface expanded for better control-risk visibility
 - Metadata and issuer-footprint coverage expanded for stronger diligence quality
+- Agent final-stage reliability remains under active hardening on live runs
 
 See [docs/week-2-update.md](docs/week-2-update.md) for the full update.
 

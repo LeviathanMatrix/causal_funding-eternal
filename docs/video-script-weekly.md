@@ -8,23 +8,22 @@ Target duration: 55-65 seconds.
 
 ## 0:10 - 0:30 (Demo Flow)
 
-\"This week we run `causal_funding` on a live mint. The system auto-detects context, traces funding causality, and produces a structured risk output.\"
+\"This week we upgraded the public layer from a simple shell into a decision and review console. We run `causal_funding` on a live mint, turn the analysis into an operator-facing case, and surface the decision in a cleaner way.\"
 
 ## 0:30 - 0:45 (Decision + Evidence)
 
-\"We output a decision action: ALLOW, REVIEW, or BLOCK, with evidence highlights and forensic risk surfaces for operator review.\"
+\"The console now shows an executive decision, evidence surfaces across funding, control, permissions, and issuer context, plus a public-safe evidence brief for evaluator review.\"
 
 ## 0:45 - 0:55 (Governance)
 
-\"Policy is calibrated from replay data, and drift closure monitors regime instability to tighten thresholds when needed.\"
+\"We also added what-if simulation and review workflow support, so evaluators can test how the decision changes when key risk conditions change, while the system keeps the review flow structured and consistent.\"
 
 ## 0:55 - 1:00 (Next Step)
 
-\"Next week we are improving [X], [Y], and [Z] for stronger institutional readiness.\"
+\"Next week we are hardening final-stage agent reliability and improving evidence packaging for stronger evaluator and institutional readiness.\"
 
 ## Subtitle Guidance
 
 - Keep one sentence per subtitle card.
 - Use white text with dark background.
 - Avoid small text blocks and avoid technical overload.
-

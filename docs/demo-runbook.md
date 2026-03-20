@@ -9,7 +9,7 @@ Show a complete operator decision loop:
 1. Input mint
 2. Risk and evidence generation
 3. ALLOW / REVIEW / BLOCK decision
-4. Governance status (drift closure)
+4. Review-ready operating context
 
 ## Demo Inputs
 
@@ -35,7 +35,7 @@ For controlled evaluators, the same shell can forward to a configured analysis e
 2. Auto pool detection and seed discovery
 3. Final risk score + confidence
 4. Decision action (ALLOW / REVIEW / BLOCK)
-5. Evidence highlights and forensic summary
+5. Evidence highlights and review summary
 
 ## What To Avoid Showing
 

@@ -25,8 +25,8 @@ Contact:
 ## What Is Included In Judge Mode
 
 - Expanded evidence visibility
-- Decision policy context (ALLOW / REVIEW / BLOCK)
-- Drift governance status
+- Decision context (ALLOW / REVIEW / BLOCK)
+- Additional evaluator-facing operating context
 
 ## What Remains Private
 
