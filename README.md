@@ -21,21 +21,18 @@ This is not a toy rug checker. The system is designed as a decision workflow:
 5. ALLOW / REVIEW / BLOCK decision output
 6. Ongoing evaluator-facing review workflow
 
-## Web4 Infrastructure Thesis
+## Agent-Native Infrastructure Direction
 
-Web4 agents are constrained by bad upstream decisions: they spend tokens, time, and execution budget on assets that should have been filtered earlier.
+As agent-based execution becomes more common on Solana, risk decisions must be machine-consumable, auditable, and repeatable.
 
-`causal_funding` is being built as decision infrastructure for autonomous agents and operator teams:
+`causal_funding` is positioned as decision infrastructure for both operator teams and autonomous workflows:
 
-- Autonomous trading gate: pre-trade ALLOW / REVIEW / BLOCK output before execution
-- Multi-dimensional risk scoring: not one score, but decision-oriented risk surfaces
-- LP Gold verification: liquidity behavior and control risk checks in the same review flow
-- Agent decision engine: structured evidence converted into action-level judgment
+- Pre-trade decision gate: `ALLOW / REVIEW / BLOCK`
+- Multi-surface risk view: funding, control, permissions, and issuer context
+- LP Gold verification within the same review flow
+- Agent-ready evidence packaging for downstream policy engines
 
-Our product direction is simple: help agents earn more than they waste by reducing avoidable bad actions at decision time.
-For pilot workflows, we are targeting up to ~90% reduction in wasted token spend from low-quality candidate flows.
-
-This is the Leviathan MCP direction: infrastructure that makes intelligent agents operationally sustainable on Solana.
+The goal is not to produce another alert feed. The goal is to provide a consistent decision layer that can be integrated into real listing, investing, and trading workflows.
 
 ## Why Solana
 
