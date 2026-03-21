@@ -15,12 +15,7 @@
   },
   "decision_policy": {
     "action": "BLOCK",
-    "reason": "score_above_block_and_confident",
-    "thresholds": {
-      "block_threshold": 70.0,
-      "review_threshold": 45.0,
-      "min_confidence_for_block": 0.55
-    }
+    "reason": "policy_gate_triggered"
   },
   "judgement": {
     "verdict_level": "high",
