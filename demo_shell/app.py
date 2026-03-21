@@ -137,10 +137,20 @@ def _build_payload(raw: dict[str, Any], mint: str, judge_mode: bool, *, ok: bool
             console = _build_console_from_report(_safe_json(SAMPLE_FILE), mint_hint=mint, judge_mode=judge_mode, source_label="sample_fallback")
     else:
         console = _attach_watchlist(console)
-    payload["ok"] = bool(ok)
-    payload["source"] = source
-    payload["console_view"] = console
-    return payload
+    # Public-shell contract: return only safe, evaluator-facing fields.
+    response = {
+        "ok": bool(ok),
+        "source": source,
+        "console_view": console,
+    }
+    if isinstance(payload.get("meta"), dict):
+        meta = payload.get("meta") or {}
+        response["meta"] = {
+            "runtime_ms": float(meta.get("runtime_ms") or 0.0),
+            "api_calls": int(meta.get("api_calls") or 0),
+            "tx_fetched": int(meta.get("tx_fetched") or 0),
+        }
+    return response
 
 
 def _fallback_payload(mint: str, judge_mode: bool, ok: bool = True) -> dict[str, Any]:
