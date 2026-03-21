@@ -33,7 +33,7 @@ Most market tools stop at one of these layers:
 4. Produce action-level decisions (ALLOW / REVIEW / BLOCK)
 5. Support downstream review and repeated evaluation
 
-## Agent and MCP Positioning
+## Web4 Agent and MCP Positioning
 
 We position `causal_funding` as decision infrastructure, not as a standalone warning widget.
 

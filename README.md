@@ -4,6 +4,8 @@
 
 **From raw on-chain noise to an auditable BLOCK / REVIEW / ALLOW decision in minutes.**
 
+**Leviathan MCP for Web4 agents: machine-consumable decision intelligence for pre-trade and pre-listing controls.**
+
 ## Judge TL;DR
 
 - Not a score-only tool: this demo outputs decision + evidence + operating status.
@@ -21,16 +23,16 @@ This is not a toy rug checker. The system is designed as a decision workflow:
 5. ALLOW / REVIEW / BLOCK decision output
 6. Ongoing evaluator-facing review workflow
 
-## Agent-Native Infrastructure Direction
+## Web4 Agent and MCP Infrastructure Direction
 
-As agent-based execution becomes more common on Solana, risk decisions must be machine-consumable, auditable, and repeatable.
+As Web4 agent-based execution becomes more common on Solana, risk decisions must be machine-consumable, auditable, and repeatable.
 
 `causal_funding` is positioned as decision infrastructure for both operator teams and autonomous workflows:
 
 - Pre-trade decision gate: `ALLOW / REVIEW / BLOCK`
 - Multi-surface risk view: funding, control, permissions, and issuer context
 - LP Gold verification within the same review flow
-- Agent-ready evidence packaging for downstream policy engines
+- MCP and agent-ready evidence packaging for downstream policy engines
 
 The goal is not to produce another alert feed. The goal is to provide a consistent decision layer that can be integrated into real listing, investing, and trading workflows.
 
