@@ -33,6 +33,23 @@ Most market tools stop at one of these layers:
 4. Produce action-level decisions (ALLOW / REVIEW / BLOCK)
 5. Support downstream review and repeated evaluation
 
+## Web4 Positioning
+
+We position `causal_funding` as Web4 decision infrastructure, not as a standalone warning widget.
+
+In Web4 execution loops, autonomous agents fail when pre-trade decision quality is weak. They over-spend budget on low-quality actions before they can iterate.
+
+Our MCP-facing direction is to provide:
+
+- action-ready decision output (`ALLOW / REVIEW / BLOCK`)
+- concise evidence surfaces for machine + human review
+- LP Gold and control-risk checks in the same decision flow
+- repeatable case review workflow for continuous agent tuning
+
+Target outcome for pilots: material reduction in wasted token spend from low-quality candidates, with up to ~90% reduction as a directional operating goal in constrained workflows.
+
+This is the core narrative: agents should earn more than they spend, and decision intelligence is the infrastructure that enables that.
+
 ## Agent Intelligence Layer
 
 A major differentiator is the agent-driven interpretation layer.

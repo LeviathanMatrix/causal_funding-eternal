@@ -31,6 +31,7 @@ We are already beyond concept stage. The roadmap is about hardening a working sy
 - Maintain controlled evaluator access
 - Prepare higher-concurrency batch workflows for pilot users
 - Expand integration materials for exchanges/funds/security teams
+- Expand MCP-facing integration for Web4 agent workflows
 
 ## Access and Release Strategy
 
