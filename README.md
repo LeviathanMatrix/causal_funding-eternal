@@ -187,6 +187,17 @@ Week 2 focused on evaluator-facing product depth and runtime hardening.
 
 See [docs/week-2-update.md](docs/week-2-update.md) for the full update.
 
+## Week 3 Progress
+
+Week 3 was a small reliability pass focused on signal correctness, streamable agent-facing output, and runtime consistency.
+
+- cross-token reuse detection correctness fix
+- safer inbound normalization behavior when pricing data is unavailable
+- faster convergence probing through parallel execution
+- streamable NDJSON stage output for orchestration and agent consumption
+
+See [docs/week-3-update.md](docs/week-3-update.md) for the full update.
+
 ## Internal Calibration Snapshot (Current)
 
 From the current internal provisional labeled set (rounded for public sharing):
@@ -243,6 +254,7 @@ Current access is controlled for judges and selected pilot counterparts.
 - `docs/video-script-weekly.md`
 - `docs/demo-shell-architecture.md`
 - `docs/week-2-update.md`
+- `docs/week-3-update.md`
 - `examples/sample_report_redacted.json`
 - `demo_shell/`
 
