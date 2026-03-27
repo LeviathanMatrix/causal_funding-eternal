@@ -36,45 +36,15 @@ As Web4 agent-based execution becomes more common on Solana, risk decisions must
 
 The goal is not to produce another alert feed. The goal is to provide a consistent decision layer that can be integrated into real listing, investing, and trading workflows.
 
-```mermaid
-flowchart LR
-    A["Agents / Trading Bots / Risk Ops"] --> B["Leviathan MCP Gateway"]
-    B --> B1["Auth & Tenant Isolation"]
-    B --> B2["Rate / Budget Guard"]
-    B --> B3["Mode Router (Fast / Deep)"]
-
-    subgraph C["Decision Fabric (Proprietary Core Sealed)"]
-      C1["Case Intake<br/>mint / pool / context"]
-      C2["Evidence Surface Compiler<br/>Funding / Control / Permission / Issuer"]
-      C3["Policy Engine<br/>ALLOW / REVIEW / BLOCK"]
-      C4["Confidence & Uncertainty Envelope"]
-      C5["Forensic Evidence Pack<br/>evidence IDs / trace refs / audit hash"]
-      C1 --> C2 --> C3 --> C4 --> C5
-    end
-
-    B3 --> D1["Fast Path (seconds)<br/>Pre-trade decision + concise evidence"]
-    B3 --> D2["Deep Path (minutes)<br/>Institutional-grade case file"]
-    D1 --> C1
-    D2 --> C1
-
-    C5 --> E["MCP Response Contract"]
-    E --> E1["Verdict + Confidence"]
-    E --> E2["Risk Surfaces Summary"]
-    E --> E3["Compliance Flags"]
-    E --> E4["Action Memo for Agent"]
-
-    E --> F["Console / API Consumer / Judge View"]
-    F --> G["Case Review Workflow"]
-    G --> H["Watchlist & Recheck Scheduler"]
-    H --> I["Drift Monitor & Threshold Calibration"]
-    I --> C3
-
-    classDef core fill:#0b1b2b,stroke:#63d2ff,color:#d8f3ff;
-    classDef edge fill:#121826,stroke:#8aa4ff,color:#e6ecff;
-    class C,C1,C2,C3,C4,C5 core;
-    class A,B,B1,B2,B3,D1,D2,E,E1,E2,E3,E4,F,G,H,I edge;
-
-```
+flowchart TD
+    A["1. Candidate Discovery<br/>Agent collects token candidates from market/watchlist"] --> B["2. Leviathan MCP Scan<br/>Funding attribution, control surface, issuer profile, liquidity structure, risk evidence"]
+    B --> C["3. Decision Compression<br/>ALLOW / REVIEW / BLOCK + evidence summary + confidence"]
+    C --> D["4. Agent Strategy Choice<br/>Agent selects only from policy-safe candidate set"]
+    D --> E["5. AEP Policy Gate<br/>Identity, authority, treasury scope, execution constraints, bond requirement"]
+    E --> F["6. Execution Ticket Issuance<br/>Signed ticket with execution_id, expiry, cap, decision, challenge window"]
+    F --> G["7. Devnet / On-chain Execution<br/>Transfer or swap through constrained execution path"]
+    G --> H["8. Post-Trade State Update<br/>Balances, logs, receipts, replay protection, audit trail"]
+    H --> I["9. Continuous Agent Loop<br/>Monitor, reassess, exit, or continue scanning"]
 
 ## Why Solana
 
