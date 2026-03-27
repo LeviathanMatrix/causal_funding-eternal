@@ -2,29 +2,41 @@
 
 ## Summary
 
-Week 3 was a small reliability-focused iteration.
+Week 3 established Leviathan as more than an attribution engine: a Web4-ready constitutional execution stack for pre-trade and pre-listing risk control.
 
-We prioritized correctness fixes, cleaner agent-facing output, and runtime consistency over feature expansion.
+This cycle introduced the AEP layer in product narrative and workflow framing, while continuing to harden runtime correctness and agent-facing delivery.
 
 ## What We Shipped
 
-- Fixed a cross-token reuse detection issue that could under-report wallet overlap signals.
-- Removed stale fallback conversion behavior in inbound funding normalization when reliable pricing is unavailable.
-- Parallelized top-source convergence probes to reduce waiting time in the tracing stage.
-- Added streamable NDJSON output mode (`--stream-json`) so orchestration and agent workflows can consume stage-by-stage progress without waiting for final report completion.
-- Introduced a Python FastMCP server path to align runtime architecture and simplify integration workflows.
+### 1) AEP (AI Constitution) Positioning Layer
+
+- Added AEP framing as the policy boundary layer for autonomous agents.
+- Clarified execution model around machine-verifiable guardrails, accountable permissions, and audit-ready decision paths.
+- Updated documentation to reflect Leviathan as execution infrastructure, not a score-only analytics tool.
+
+### 2) Leviathan MCP Delivery Hardening
+
+- Added streamable NDJSON output mode (`--stream-json`) for stage-by-stage machine consumption.
+- Continued FastMCP alignment through Python runtime path for cleaner integration workflows.
+- Improved orchestration readiness for agent pipelines consuming deterministic decision objects.
+
+### 3) Attribution Runtime Quality Upgrades
+
+- Fixed cross-token reuse overlap logic that could under-report wallet-level recurrence signals.
+- Removed stale inbound conversion fallback behavior when reliable pricing is unavailable.
+- Parallelized top-source convergence probing to reduce wait time in the tracing stage.
 
 ## Quality Improvements
 
-- Fixed a CLI startup regression discovered during validation.
-- Re-ran syntax and startup checks for core runtime entry points after the patch set.
-- Kept this cycle intentionally narrow to reduce risk before broader Week 3/4 performance work.
+- Fixed a CLI startup regression identified during validation.
+- Re-ran syntax and runtime entry checks after the patch set.
+- Preserved controlled public output boundaries while improving machine-facing output quality.
 
 ## Demo/Review Impact
 
-- More reliable signal extraction in cross-token context.
-- Cleaner machine-consumable progress output for agent pipelines.
-- Better runtime stability for evaluator-facing demonstrations.
+- Clearer explanation of why Leviathan exists for Web4 agent workflows.
+- Stronger bridge from attribution evidence to executable `ALLOW / REVIEW / BLOCK` decisions.
+- Better machine-consumable runtime behavior for evaluator and agent demonstrations.
 
 ## Next Focus
 

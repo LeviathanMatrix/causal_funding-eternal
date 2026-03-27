@@ -1,6 +1,6 @@
 # causal_funding Eternal
 
-`causal_funding` is a Solana-native, decision-grade risk intelligence system for listing review, investment screening, and pre-trade gating.
+`Leviathan` (powered by `causal_funding`) is a Solana-native constitutional execution and decision infrastructure stack for listing review, investment screening, and pre-trade gating.
 
 **From raw on-chain noise to an auditable BLOCK / REVIEW / ALLOW decision in minutes.**
 
@@ -186,12 +186,14 @@ See [docs/week-2-update.md](docs/week-2-update.md) for the full update.
 
 ## Week 3 Progress
 
-Week 3 was a small reliability pass focused on signal correctness, streamable agent-facing output, and runtime consistency.
+Week 3 formalized Leviathan as constitutional execution infrastructure for Web4 agents, while shipping runtime quality upgrades.
 
-- cross-token reuse detection correctness fix
-- safer inbound normalization behavior when pricing data is unavailable
-- faster convergence probing through parallel execution
-- streamable NDJSON stage output for orchestration and agent consumption
+- introduced AEP framing for machine-verifiable policy boundaries and accountable execution control
+- strengthened Leviathan MCP delivery path for machine-consumable pre-trade decisions
+- fixed cross-token reuse overlap correctness in attribution runtime
+- removed stale inbound conversion fallback when reliable pricing is unavailable
+- accelerated top-source convergence probing via parallel execution
+- expanded streamable NDJSON stage output for orchestration and agent consumption
 
 See [docs/week-3-update.md](docs/week-3-update.md) for the full update.
 
