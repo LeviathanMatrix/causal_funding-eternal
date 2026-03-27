@@ -48,6 +48,22 @@ Our MCP-facing direction is to provide:
 
 This keeps the product aligned with institutional standards: explainable evidence, consistent decisions, and operational governance.
 
+## Leviathan Constitutional Extension
+
+To address Web4 trust gaps, we are extending positioning from "agent-compatible output" to a constitutional execution model:
+
+- AEP (AI Constitution) defines machine-verifiable execution boundaries
+- Leviathan MCP delivers deterministic pre-trade decision objects
+- the attribution core provides evidence-weighted risk context behind each decision
+
+Positioning impact:
+
+- autonomous agents can consume decisions directly instead of parsing raw analytics
+- operators retain auditability and accountability in the same workflow
+- decision quality scales without exposing proprietary internals
+
+This is implementation-oriented infrastructure positioning, not narrative-only branding.
+
 ## Agent Intelligence Layer
 
 A major differentiator is the agent-driven interpretation layer.

@@ -6,6 +6,8 @@
 
 **Leviathan MCP for Web4 agents: machine-consumable decision intelligence for pre-trade and pre-listing controls.**
 
+**Leviathan direction: constitutional execution boundaries + machine-consumable pre-trade decisions for autonomous Web4 workflows.**
+
 ## Judge TL;DR
 
 - Not a score-only tool: this demo outputs decision + evidence + operating status.
@@ -35,6 +37,22 @@ As Web4 agent-based execution becomes more common on Solana, risk decisions must
 - MCP and agent-ready evidence packaging for downstream policy engines
 
 The goal is not to produce another alert feed. The goal is to provide a consistent decision layer that can be integrated into real listing, investing, and trading workflows.
+
+### Why Leviathan Exists (Web4 Gap)
+
+If autonomous agents are operating capital directly, three gaps become critical:
+
+- missing machine-verifiable execution boundaries
+- missing pre-trade decision objects agents can consume directly
+- missing accountable, auditable decision paths for agent actions
+
+Leviathan addresses these gaps as a practical MVP stack:
+
+- **AEP (AI Constitution):** policy guardrails and accountable execution boundaries
+- **Leviathan MCP:** deterministic `ALLOW / REVIEW / BLOCK` decision contract
+- **Attribution core:** evidence-backed risk context that powers those decisions at runtime
+
+See [docs/leviathan-web4-mvp.md](docs/leviathan-web4-mvp.md) for scope and MVP boundaries.
 
 ```mermaid
 flowchart LR
@@ -234,6 +252,7 @@ Current access is controlled for judges and selected pilot counterparts.
 - `docs/demo-shell-architecture.md`
 - `docs/week-2-update.md`
 - `docs/week-3-update.md`
+- `docs/leviathan-web4-mvp.md`
 - `examples/sample_report_redacted.json`
 - `demo_shell/`
 
