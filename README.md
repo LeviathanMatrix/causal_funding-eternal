@@ -36,15 +36,24 @@ As Web4 agent-based execution becomes more common on Solana, risk decisions must
 
 The goal is not to produce another alert feed. The goal is to provide a consistent decision layer that can be integrated into real listing, investing, and trading workflows.
 
-flowchart TD
-    A["1. Candidate Discovery<br/>Agent collects token candidates from market/watchlist"] --> B["2. Leviathan MCP Scan<br/>Funding attribution, control surface, issuer profile, liquidity structure, risk evidence"]
-    B --> C["3. Decision Compression<br/>ALLOW / REVIEW / BLOCK + evidence summary + confidence"]
-    C --> D["4. Agent Strategy Choice<br/>Agent selects only from policy-safe candidate set"]
-    D --> E["5. AEP Policy Gate<br/>Identity, authority, treasury scope, execution constraints, bond requirement"]
-    E --> F["6. Execution Ticket Issuance<br/>Signed ticket with execution_id, expiry, cap, decision, challenge window"]
-    F --> G["7. Devnet / On-chain Execution<br/>Transfer or swap through constrained execution path"]
-    G --> H["8. Post-Trade State Update<br/>Balances, logs, receipts, replay protection, audit trail"]
-    H --> I["9. Continuous Agent Loop<br/>Monitor, reassess, exit, or continue scanning"]
+```mermaid
+flowchart LR
+    A["01 Candidate Intake"] --> B["02 Leviathan Attribution Engine"]
+    B --> C["03 Risk Compression Layer"]
+    C --> D["04 Agent Strategy Selection"]
+    D --> E["05 AEP Policy Gate"]
+    E --> F["06 Execution Ticket"]
+    F --> G["07 Constrained On-Chain Execution"]
+    G --> H["08 Audit, Replay Protection, State Update"]
+    H --> I["09 Continuous Agent Trading Loop"]
+
+    B1["Funding provenance<br/>Control surface<br/>Issuer profile<br/>Liquidity structure"] --> B
+    C1["ALLOW / REVIEW / BLOCK<br/>Evidence summary<br/>Confidence envelope"] --> C
+    E1["Identity<br/>Authority<br/>Limits<br/>Bond requirement"] --> E
+    G1["Transfer / Swap<br/>Devnet or production path"] --> G
+
+```
+    
 
 ## Why Solana
 
