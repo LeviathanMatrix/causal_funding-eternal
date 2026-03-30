@@ -188,12 +188,13 @@ See [docs/week-2-update.md](docs/week-2-update.md) for the full update.
 
 Week 3 formalized Leviathan as constitutional execution infrastructure for Web4 agents, while shipping runtime quality upgrades.
 
-- introduced AEP framing for machine-verifiable policy boundaries and accountable execution control
-- strengthened Leviathan MCP delivery path for machine-consumable pre-trade decisions
+- expanded AEP into a framework-agnostic constitutional kernel with a clearer case lifecycle
+- added multi-action workflow coverage across trade, payment, approve, and contract call
+- routed devnet trade requests toward live attribution first, with explicit fail-closed fallback
+- hardened the controlled devnet execution lane and reconciliation flow
 - fixed cross-token reuse overlap correctness in attribution runtime
 - removed stale inbound conversion fallback when reliable pricing is unavailable
 - accelerated top-source convergence probing via parallel execution
-- expanded streamable NDJSON stage output for orchestration and agent consumption
 
 See [docs/week-3-update.md](docs/week-3-update.md) for the full update.
 
